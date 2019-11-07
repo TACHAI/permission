@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+#    password: chaoxing@qq.com
+    password: hzc778209
+    url: jdbc:mysql://127.0.0.1:3306/filemanagement?serverTimezone=GMT%2B8&characterEncoding=UTF-8
+    dbcp2:
+      initial-size: 20
+      min-evictable-idle-time-millis: 3600000
+      default-auto-commit: true
+    tomcat:
+      max-active: 50
+    jpa:
+      show-sql: true
+    jackson:
+      default-property-inclusion: non_null
+    druid:
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: select 1 from dual
+  servlet:
+    multipart:
+      max-file-size: 2000MB
+      max-request-size: 2000MB
+server:
+  servlet:
+    context-path: /
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+## path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
+##  level:
+#  level: debug
+
+logging:
+  file: catlina.log
+  level:
+    package com.chaoxing.permission.dao: info
+#原数据配置文件
+mybatis:
+  typeAliasesPackage: com.chaoxing.permission.po
+  mapper-locations: classpath:mappers/*.xml
+
