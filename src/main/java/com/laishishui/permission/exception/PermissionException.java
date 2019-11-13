@@ -6,7 +6,8 @@ package com.laishishui.permission.exception;
  * Email tc1206966083@gmail.com
  */
 public class PermissionException extends RuntimeException {
-    public PermissionException() {
+//public class PermissionException  {
+   public PermissionException() {
         super();
     }
 

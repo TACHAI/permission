@@ -1,16 +1,24 @@
 package com.laishishui.permission;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@Slf4j
 @SpringBootApplication
-public class PermissionApplication {
+public class PermissionApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(PermissionApplication.class, args);
-        log.info("123");
     }
+
+    //打成war包使用
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
+        // 此处Application.class 替换为springboot默认启动类
+        return builder.sources(PermissionApplication.class);
+    }
+
+
 
 }
